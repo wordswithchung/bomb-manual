@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bomb Manual</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+  </head>
+  <body>
+    <div class="container-fluid passwords">
+      <div class="row">
+        <div class="col-xs-6">
+          <img src="passwords.png">
+          <h2>Passwords</h2>
+          <!-- Answer goes here -->
+          <h4>ANSWER: <div id="passwords-answer"></div></h4>
+          <!-- Input letters here -->
+          <table class="table">
+            <thead class="thead-inverse">
+              <th>1st Letters</th>
+              <th>2nd Letters</th>
+              <th>3rd Letters</th>
+              <th>4th Letters</th>
+              <th>5th Letters</th>
+            </thead>
+            <tr>
+              <td><input type="text" name="passwords-1st-letters"></td>
+              <td><input type="text" name="passwords-2nd-letters"></td>
+              <td><input type="text" name="passwords-3rd-letters"></td>
+              <td><input type="text" name="passwords-4th-letters"></td>
+              <td><input type="text" name="passwords-5th-letters"></td>
+            </tr>
+          </table>
+          <hr>
+          <h4>Possible Answers</h4>
+          <img src="possible_answers.png">
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="bomb.js"></script>
+
+  </body>
+</html>
