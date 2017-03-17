@@ -1,33 +1,23 @@
 // "use strict";
 
 var answers = ["about",	"after", "again",	"below",	"could", "every",	"first",	"found",	"great",	"house", "large",	"learn",	"never",	"other",	"place", "plant",	"point",	"right",	"small", "sound", "spell",	"still",	"study",	"their",	"there", "these",	"thing",	"think",	"three",	"water", "where",	"which",	"world",	"would",	"write"];
+var letters = ["", "", "", "", ""];
 
-var first = "";
-var second = "";
-var third = "";
-var fourth = "";
-var fifth = "";
-var total = [];
+var l1 = document.getElementById('pw-letters-1');
+var l2 = document.getElementById('pw-letters-2');
+var l3 = document.getElementById('pw-letters-3');
+var l4 = document.getElementById('pw-letters-4');
+var l5 = document.getElementById('pw-letters-5');
 
-$('#passwords-1st-letters').keyup(function() {first = $(this).val();
-  for (i = 0; i < answers.length; i++) {
-    if (first.indexOf(answers[i][0]) >= 0) {
-      console.log(answers[i]);
-      if (total.indexOf(answers[i]) > -1) {
-        console.log(total);
-        total.push(answers[i]);
-        $('#passwords-answer').text(total);
-      };
-    };
-  };
-});
-$('#passwords-2nd-letters').keyup(function() {second = $(this).val();});
-$('#passwords-3rd-letters').keyup(function() {third = $(this).val();});
-$('#passwords-4th-letters').keyup(function() {fourth = $(this).val();});
-$('#passwords-5th-letters').keyup(function() {fifth = $(this).val();});
-
-for (i = 0; i < answers.length; i++) {
-  if (first.indexOf(answers[i][0]) >= 0) {
-    $('#passwords-answer').text(answers[i]);
-  };
-};
+function addLetters(event) {
+  if (l1.value !== null) {letters[0] = l1.value};
+  if (l2.value !== null) {letters[1] = l2.value};
+  if (l3.value !== null) {letters[2] = l3.value};
+  if (l4.value !== null) {letters[3] = l4.value};
+  if (l5.value !== null) {letters[4] = l5.value};
+  console.log(letters);
+}
+//
+// l1.addEventListener("keydown", addLetters(event));
+// l1.addEventListener("keyup", addLetters(event));
+// l1.addEventListener("keypress", addLetters(event));
