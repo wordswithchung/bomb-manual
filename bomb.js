@@ -16,19 +16,17 @@ function addLetters() {
   if (l4.value !== null) {letters[3] = l4.value};
   if (l5.value !== null) {letters[4] = l5.value};
   console.log(letters);
-  return displayAnswers();
+  displayAnswers();
 }
+
 
 function displayAnswers() {
-  document.getElementById('passwords-answers').text("here");
-}
+  var final = [];
+  for (i = 0; i < answers.length; i++) {
+    if (letters[0].includes(answers[i][0])) {
+      final.push(answers[i]);
+    }
+  }
 
-// function displayAnswers() {
-//   for (i = 0; i < answers.length; i++) {
-//     console.log(i);
-//     console.log(letters[0]);
-//     if (letters[0].includes(answers[i][0])) {
-//       document.getElementById('passwords-answers').innerHTML(answers[i]);
-//     }
-//   }
-// }
+  $("#passwords-answers").text(final);
+}
