@@ -22,11 +22,12 @@ function addLetters() {
 
 function displayAnswers() {
   var final = [];
-  for (i = 0; i < answers.length; i++) {
-    if (letters[0].includes(answers[i][0])) {
-      final.push(answers[i]);
+  for (j = 0; j < letters.length; j++) {
+    if (letters[j] !== null) {
+      for (i = 0; i < answers.length; i++) {
+        if (letters[j].includes(answers[i][j])) { final.push(answers[i]); }
+      }
     }
   }
-
   $("#passwords-answers").text(final);
 }
