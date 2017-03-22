@@ -1,7 +1,9 @@
 // "use strict";
 
 var answers = ["about",	"after", "again",	"below",	"could", "every",	"first",	"found",	"great",	"house", "large",	"learn",	"never",	"other",	"place", "plant",	"point",	"right",	"small", "sound", "spell",	"still",	"study",	"their",	"there", "these",	"thing",	"think",	"three",	"water", "where",	"which",	"world",	"would",	"write"];
-var letters = ["", "", "", "", ""];
+var l = ["", "", "", "", ""];
+var temp = [];
+var final = [];
 
 var l1 = document.getElementById('pw-letters-1');
 var l2 = document.getElementById('pw-letters-2');
@@ -10,24 +12,26 @@ var l4 = document.getElementById('pw-letters-4');
 var l5 = document.getElementById('pw-letters-5');
 
 function addLetters() {
-  if (l1.value !== null) {letters[0] = l1.value};
-  if (l2.value !== null) {letters[1] = l2.value};
-  if (l3.value !== null) {letters[2] = l3.value};
-  if (l4.value !== null) {letters[3] = l4.value};
-  if (l5.value !== null) {letters[4] = l5.value};
-  console.log(letters);
+  if (l1.value !== null) {l[0] = l1.value; getAnswers(0);};
+  if (l2.value !== null) {l[1] = l2.value; getAnswers(1);};
+  if (l3.value !== null) {l[2] = l3.value; getAnswers(2);};
+  if (l4.value !== null) {l[3] = l4.value; getAnswers(3);};
+  if (l5.value !== null) {l[4] = l5.value; getAnswers(4);};
+  console.log(l);
   displayAnswers();
 }
 
-
-function displayAnswers() {
-  var final = [];
-  for (j = 0; j < letters.length; j++) {
-    if (letters[j] !== null) {
-      for (i = 0; i < answers.length; i++) {
-        if (letters[j].includes(answers[i][j])) { final.push(answers[i]); }
-      }
+function getAnswers(letterIndex) {
+  for (i = 0; i < answers.length; i++) {
+    if (l[letterIndex].includes(answers[i][letterIndex]) && (temp.indexOf(answers[i]) < 0)) {
+      temp.push(answers[i]);
+      console.log(temp);
     }
   }
+}
+
+function displayAnswers() {
+  // for (i = 0; i < temp.length; i++) {
+  //   if ()
   $("#passwords-answers").text(final);
 }
