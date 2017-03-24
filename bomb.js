@@ -1,6 +1,6 @@
 // "use strict";
 
-var answers = ["about",	"after", "again",	"below",	"could", "every",	"first",	"found",	"great",	"house", "large",	"learn",	"never",	"other",	"place", "plant",	"point",	"right",	"small", "sound", "spell",	"still",	"study",	"their",	"there", "these",	"thing",	"think",	"three",	"water", "where",	"which",	"world",	"would",	"write"];
+var answers = ["about",	"after", "again",	"below", "could", "every",	"first",	"found",	"great",	"house", "large",	"learn",	"never",	"other",	"place", "plant",	"point",	"right",	"small", "sound", "spell",	"still",	"study",	"their",	"there", "these",	"thing",	"think",	"three",	"water", "where",	"which",	"world",	"would",	"write"];
 var l = ["", "", "", "", ""];
 
 var l1 = document.getElementById('pw-letters-1');
@@ -20,18 +20,40 @@ function addLetters() {
 }
 
 function getAnswers() {
-  var tempL = {};
+  var isPopulated = [];
   for (i = 0; i < l.length; i++) {
     if (l[i].length > 0) {
-      tempL[i] = l[i];
+      isPopulated[i] = true;
+    } else {
+      isPopulated[i] = false;
     }
   }
 
+  var lMap = {}
+  for (m = 0; m < l.length; m++) {
+    if (l[m].length > 0) {
+      lMap[m] = l[m];
+    }
+  }
+
+  // loop through the dictionary with each word
+  // each key is required
+
+  for (a = 0; a < lMap.length; a++) {
+    for (j = 0; j < answers.length; j++) {
+      if (answers[j])
+    }
+  }
+
+
   for (j = 0; j < answers.length; j++) {
-    for (k = 0; k < tempL.length; k++) {
+    for (k = 0; k < l.length; k++) {
 
     }
-    if (l[0].includes(answers[i][letterIndex]))
+    if ()
+
+    }
+
   }
 }
 
